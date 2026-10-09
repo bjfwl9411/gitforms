@@ -137,7 +137,7 @@ export async function POST(request: NextRequest) {
     // ── Build GitHub Issue labels ──────────────────────────────────────────
     const labels: string[] = ['contatto']
     if (spamScore >= 50) labels.push('suspected-spam')
-    if (classification.intent \!== 'other') labels.push(classification.intent)
+    if (classification.intent !== 'other') labels.push(classification.intent)
     if (classification.urgency === 'high') labels.push('urgent')
 
     // ── Build GitHub Issue body ────────────────────────────────────────────
